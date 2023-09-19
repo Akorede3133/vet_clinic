@@ -122,3 +122,11 @@ SELECT neutered AS NOT_NEUTERED, MIN(weight_kg) AS MIN_WEIGHT, MAX(weight_kg) AS
 FROM animals
 GROUP BY neutered
 HAVING neutered = FALSE;
+
+-- What is the average number of escape attempts per animal type of those born between 1990 and 2000?
+
+-- Neutered the average number of escape attempts
+SELECT neutered, AVG(escape_attempts) AS AVG_OF_ESCAPE
+FROM animals
+WHERE neutered = TRUE AND date_of_birth BETWEEN '1990-01-01' AND '2000-12-31'
+GROUP BY neutered;

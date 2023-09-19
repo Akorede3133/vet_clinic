@@ -116,3 +116,9 @@ SELECT neutered, MIN(weight_kg) AS MIN_WEIGHT, MAX(weight_kg) AS MAX_WEIGHT
 FROM animals
 GROUP BY neutered
 HAVING neutered = TRUE;
+
+-- What is the minimum and maximum weight of not neutered
+SELECT neutered AS NOT_NEUTERED, MIN(weight_kg) AS MIN_WEIGHT, MAX(weight_kg) AS MAX_WEIGHT
+FROM animals
+GROUP BY neutered
+HAVING neutered = FALSE;

@@ -86,3 +86,6 @@ WHERE weight_kg < 0;
 
 -- Commit transaction
 COMMIT;
+
+-- How many animals are there?
+SELECT COUNT(*) FROM animals;

@@ -16,8 +16,28 @@ SELECT * FROM animals WHERE name != 'Gabumon'; --Find all animals not named Gabu
 
 SELECT * FROM animals WHERE weight_kg >= 10.4 AND weight_kg <= 17.3; --Find all animals with a weight between 10.4kg and 17.3kg (including the animals with the weights that equals precisely 10.4kg or 17.3kg)
 
+/* 
+Inside a transaction update the animals table 
+by setting the species column to unspecified. 
+Verify that change was made. Then roll back 
+the change and verify that the species 
+columns went back to 
+the state before the transaction.
+*/
 BEGIN;
 UPDATE animals
 SET species = 'unspecified';
 
 ROLLBACK;
+
+/*
+Update the animals table by setting the 
+species column to digimon for all 
+animals that have a name ending in mon.
+*/
+
+BEGIN;
+
+UPDATE animals
+SET species = 'digimon'
+WHERE name LIKE '%mon';

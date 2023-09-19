@@ -74,4 +74,4 @@ SAVEPOINT DELETEDATE2022;
 
 -- Update all animals' weight to be their weight multiplied by -1.
 UPDATE animals
-SET weight_kg = weight_kg * 1;
+SET weight_kg = weight_kg * -1;

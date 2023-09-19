@@ -130,3 +130,10 @@ SELECT neutered, AVG(escape_attempts) AS AVG_OF_ESCAPE
 FROM animals
 WHERE neutered = TRUE AND date_of_birth BETWEEN '1990-01-01' AND '2000-12-31'
 GROUP BY neutered;
+
+-- Not neutered the average number of escape attempts
+SELECT neutered as NOT_NEUTERED, AVG(escape_attempts) AS AVG_OF_ESCAPE
+FROM animals
+WHERE neutered = FALSE AND date_of_birth BETWEEN '1990-01-01' AND '2000-12-31'
+GROUP BY neutered;
+

@@ -111,17 +111,9 @@ HAVING neutered = FALSE;
 
 -- What is the minimum and maximum weight of each type of animal?
 
--- What is the minimum and maximum weight of neutered
-SELECT neutered, MIN(weight_kg) AS MIN_WEIGHT, MAX(weight_kg) AS MAX_WEIGHT
+SELECT species, MAX(weight_kg), MIN(weight_kg)
 FROM animals
-GROUP BY neutered
-HAVING neutered = TRUE;
-
--- What is the minimum and maximum weight of not neutered
-SELECT neutered AS NOT_NEUTERED, MIN(weight_kg) AS MIN_WEIGHT, MAX(weight_kg) AS MAX_WEIGHT
-FROM animals
-GROUP BY neutered
-HAVING neutered = FALSE;
+GROUP BY species;
 
 -- What is the average number of escape attempts per animal type of those born between 1990 and 2000?
 

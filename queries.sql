@@ -129,3 +129,9 @@ FROM animals
 WHERE neutered = FALSE AND date_of_birth BETWEEN '1990-01-01' AND '2000-12-31'
 GROUP BY neutered;
 
+
+-- What animals belong to Melody Pond?
+SELECT full_name, name FROM animals
+JOIN owners
+ON owners.id = animals.owner_id
+WHERE full_name = 'Melody Pond';

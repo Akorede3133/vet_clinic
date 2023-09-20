@@ -42,3 +42,13 @@ ALTER TABLE animals
 ADD CONSTRAINT fk_species
 FOREIGN KEY (species_id)
 REFERENCES species(id);
+
+-- Add column owner_id
+ALTER TABLE animals
+ADD owner_id INT;
+
+-- Make the owner_id column to hold foreign keys referencing owners table
+ALTER TABLE animals
+ADD CONSTRAINT fk_owner
+FOREIGN KEY (owner_id)
+REFERENCES owners(id);

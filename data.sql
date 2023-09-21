@@ -36,6 +36,13 @@ INSERT INTO vets (name, age, date_of_graduation) VALUES
 ('Stephanie Mendez', 64, '1981-05-04'),
 ('Jack Harkness', 38, '2008-06-08');
 
+-- Insert the following data for specializations
+INSERT INTO specializations (vet_id, species_id) VALUES
+((SELECT id FROM vets WHERE name = 'William Tatcher'), (SELECT id FROM species WHERE name = 'Pokemon')),
+((SELECT id FROM vets WHERE name = 'Stephanie Mendez'), (SELECT id FROM species WHERE name = 'Digimon')),
+((SELECT id FROM vets WHERE name = 'Stephanie Mendez'), (SELECT id FROM species WHERE name = 'Pokemon')),
+((SELECT id FROM vets WHERE name = 'Jack Harkness'), (SELECT id FROM species WHERE name = 'Digimon'));
+
 /*
 Modify your inserted animals so it includes the species_id value:
 		- If the name ends in "mon" it will be Digimon

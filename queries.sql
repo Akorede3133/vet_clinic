@@ -191,3 +191,9 @@ JOIN animals
 ON animals.id = visits.animal_id
 WHERE vets.name = 'Stephanie Mendez'
 GROUP BY vet_name;
+
+SELECT vets.name AS vet_name, species.name FROM vets
+JOIN specializations
+ON specializations.vet_id = vets.id OR 
+JOIN species
+ON species.id = specializations.species_id;

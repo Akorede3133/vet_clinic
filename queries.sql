@@ -182,3 +182,12 @@ ON visits.animal_id = animals.id
 WHERE vets.name = 'William Tatcher'
 ORDER BY date_of_visit DESC
 LIMIT 1;
+
+-- How many different animals did Stephanie Mendez see?
+SELECT vets.name AS vet_name, COUNT(animals.name) FROM vets
+JOIN visits
+ON visits.vet_id = vets.id
+JOIN animals
+ON animals.id = visits.animal_id
+WHERE vets.name = 'Stephanie Mendez'
+GROUP BY vet_name;

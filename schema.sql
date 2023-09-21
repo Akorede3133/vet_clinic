@@ -60,3 +60,9 @@ CREATE TABLE vets (
     age INT,
     date_of_graduation DATE
 );
+
+--  Create a "join table" called specializations
+CREATE TABLE specializations (
+    vet_id INT,
+    species_id  INT
+);
